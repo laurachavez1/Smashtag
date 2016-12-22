@@ -11,7 +11,7 @@ import UIKit
 class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     
     var tweets = [[Tweet]]()
-    var searchText: String? = "#stanford" {
+    var searchText: String? = "#csumb" {
         didSet{
             lastSuccessfulRequest = nil
             searchTextField?.text = searchText
@@ -63,6 +63,9 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
                             self.lastSuccessfulRequest = request
                             self.tweets.insert(newTweets, atIndex: 0)
                             self.tableView.reloadData()
+                            self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, self.tableView.numberOfSections)), withRowAnimation: .None)
+                            sender?.endRefreshing()
+                            self.title = self.searchText
                         }
                     }
                 }
@@ -107,6 +110,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     
     private struct Storyboard {
         static let CellReuseIdentifier = "Tweet"
+        static let MentionsIdentifier = "Show Mentions"
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> TweetTableViewCell {
@@ -117,6 +121,31 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         return cell
     }
     
+    
+    // MARK: - Navigation
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        if identifier == Storyboard.MentionsIdentifier {
+            if let tweetCell = sender as? TweetTableViewCell {
+                if tweetCell.tweet!.hashtags.count + tweetCell.tweet!.urls.count + tweetCell.tweet!.userMentions.count + tweetCell.tweet!.media.count == 0 {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if identifier == Storyboard.MentionsIdentifier {
+                if let mtvc = segue.destinationViewController as? MentionsTableViewController {
+                    if let tweetCell = sender as? TweetTableViewCell {
+                        mtvc.tweet = tweetCell.tweet
+                    }
+                }
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

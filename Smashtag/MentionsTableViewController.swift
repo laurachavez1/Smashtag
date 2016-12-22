@@ -98,5 +98,8 @@ class MentionsTableViewController: UITableViewController {
             return UITableViewAutomaticDimension
         }
     }
-
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return mentions[section].title
+    }
 }

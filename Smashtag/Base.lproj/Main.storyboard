@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sow-f9-TXz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lFy-eF-Eja">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -21,7 +21,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="twitter"/>
                         </textField>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Tweet" rowHeight="162" id="YFg-1R-0cK" customClass="TweetTableViewCell" customModule="Smashtag" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Tweet" editingAccessoryType="disclosureIndicator" rowHeight="162" id="YFg-1R-0cK" customClass="TweetTableViewCell" customModule="Smashtag" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="122" width="600" height="162"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YFg-1R-0cK" id="cZT-Yh-zF3">
@@ -35,15 +35,15 @@
                                                 <constraint firstAttribute="width" constant="63" id="eyL-Jc-1vn"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZP7-Q7-le2">
-                                            <rect key="frame" x="79" y="34" width="513" height="107"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="521-VX-iTt">
                                             <rect key="frame" x="79" y="8" width="513" height="20"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZP7-Q7-le2">
+                                            <rect key="frame" x="79" y="36" width="513" height="107"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -64,7 +64,7 @@
                                     <outlet property="tweetProfileImageView" destination="Gtq-SJ-LIK" id="Enl-7S-fuL"/>
                                     <outlet property="tweetScreenNameLabel" destination="521-VX-iTt" id="iFl-If-f8G"/>
                                     <outlet property="tweetTextLabel" destination="ZP7-Q7-le2" id="QFB-Vm-Ee0"/>
-                                    <segue destination="Rrd-kO-EcK" kind="show" id="h5D-7l-ueA"/>
+                                    <segue destination="Rrd-kO-EcK" kind="show" identifier="Show Mentions" id="EUW-eK-zV9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -87,13 +87,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BkD-B3-O0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1401" y="241"/>
+            <point key="canvasLocation" x="2213" y="241"/>
         </scene>
         <!--Mentions Table View Controller-->
         <scene sceneID="hEw-xQ-XWN">
             <objects>
                 <tableViewController id="Rrd-kO-EcK" customClass="MentionsTableViewController" customModule="Smashtag" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zqy-gM-QoL" customClass="MentionsTableViewController" customModule="Smashtag" customModuleProvider="target">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zqy-gM-QoL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -127,35 +127,39 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="spinner" destination="ABf-r6-h2I" id="IxE-Ic-WYU"/>
+                                    <outlet property="tweetImage" destination="7w8-pX-rxw" id="Ttg-Gf-64q"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Rrd-kO-EcK" id="exT-EA-OEf"/>
-                            <outlet property="delegate" destination="Rrd-kO-EcK" id="GnW-Cb-hDQ"/>
-                        </connections>
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jml-Kc-fCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="ABf-r6-h2I">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </objects>
-            <point key="canvasLocation" x="2265" y="241"/>
+            <point key="canvasLocation" x="3077" y="241"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="jSk-S9-Gna">
+        <scene sceneID="k8g-Xj-s38">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sow-f9-TXz" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lFy-eF-Eja" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HAa-69-7XI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Bo-gP-xNr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="nSp-vG-EN6" kind="relationship" relationship="rootViewController" id="vqG-gZ-FW1"/>
+                        <segue destination="nSp-vG-EN6" kind="relationship" relationship="rootViewController" id="V1a-S8-TTC"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fdz-Mq-A5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cV2-nv-jGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="531" y="249"/>
+            <point key="canvasLocation" x="1401" y="241"/>
         </scene>
     </scenes>
 </document>
