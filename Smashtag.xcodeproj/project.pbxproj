@@ -23,6 +23,8 @@
 		6358B5501E0B6BCE0051F47A /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6358B54F1E0B6BCE0051F47A /* ImageTableViewCell.swift */; };
 		6358B5531E0B70F70051F47A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6358B5511E0B70F70051F47A /* Main.storyboard */; };
 		6358B5551E0BA5E20051F47A /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6358B5541E0BA5E20051F47A /* ImageViewController.swift */; };
+		639751831E0BBCCA007AB8BA /* RecentSearchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639751821E0BBCCA007AB8BA /* RecentSearchesTableViewController.swift */; };
+		639751851E0BBCF6007AB8BA /* RecentSearches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639751841E0BBCF6007AB8BA /* RecentSearches.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		6358B54F1E0B6BCE0051F47A /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		6358B5521E0B70F70051F47A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Smashtag/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6358B5541E0BA5E20051F47A /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		639751821E0BBCCA007AB8BA /* RecentSearchesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentSearchesTableViewController.swift; sourceTree = "<group>"; };
+		639751841E0BBCF6007AB8BA /* RecentSearches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentSearches.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,8 @@
 				6358B54D1E0B66160051F47A /* MentionsTableViewController.swift */,
 				6358B54F1E0B6BCE0051F47A /* ImageTableViewCell.swift */,
 				6358B5541E0BA5E20051F47A /* ImageViewController.swift */,
+				639751821E0BBCCA007AB8BA /* RecentSearchesTableViewController.swift */,
+				639751841E0BBCF6007AB8BA /* RecentSearches.swift */,
 			);
 			path = Smashtag;
 			sourceTree = "<group>";
@@ -302,7 +308,9 @@
 				634210701E03498F00B99727 /* TweetTableViewController.swift in Sources */,
 				6358B5501E0B6BCE0051F47A /* ImageTableViewCell.swift in Sources */,
 				6342103B1E0348F100B99727 /* ViewController.swift in Sources */,
+				639751851E0BBCF6007AB8BA /* RecentSearches.swift in Sources */,
 				6342106D1E03497700B99727 /* TwitterRequest.swift in Sources */,
+				639751831E0BBCCA007AB8BA /* RecentSearchesTableViewController.swift in Sources */,
 				6342106E1E03497700B99727 /* User.swift in Sources */,
 				634210391E0348F100B99727 /* AppDelegate.swift in Sources */,
 				6358B54E1E0B66160051F47A /* MentionsTableViewController.swift in Sources */,

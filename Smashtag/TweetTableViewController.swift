@@ -55,6 +55,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func refresh(sender: UIRefreshControl?) {
         if searchText != nil {
+            RecentSearches().add(searchText!)
             if let request = nextRequestToAttempt {
                 //fetchtweets is async API therefore must re-dispatch main queue upon return
                 request.fetchTweets{ (newTweets) -> Void in
