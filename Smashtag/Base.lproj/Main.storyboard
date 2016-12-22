@@ -118,21 +118,27 @@
                                     <segue destination="nSp-vG-EN6" kind="show" identifier="From Keyword" id="70N-KK-9X4"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Image Cell" rowHeight="286" id="K2P-fi-Uk1" customClass="MentionsTableViewCell" customModule="Smashtag" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Image Cell" rowHeight="286" id="K2P-fi-Uk1" customClass="ImageTableViewCell" customModule="Smashtag" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="600" height="286"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K2P-fi-Uk1" id="kAo-aR-g83">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="285.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7w8-pX-rxw">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7w8-pX-rxw">
                                             <rect key="frame" x="8" y="7" width="584" height="269.5"/>
                                         </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="leadingMargin" secondItem="7w8-pX-rxw" secondAttribute="leading" id="6bC-94-EGr"/>
+                                        <constraint firstItem="7w8-pX-rxw" firstAttribute="top" secondItem="kAo-aR-g83" secondAttribute="topMargin" constant="-1" id="CiF-PX-t9t"/>
+                                        <constraint firstItem="7w8-pX-rxw" firstAttribute="centerX" secondItem="kAo-aR-g83" secondAttribute="centerX" id="GZs-ML-Cc8"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="spinner" destination="ABf-r6-h2I" id="IxE-Ic-WYU"/>
                                     <outlet property="tweetImage" destination="7w8-pX-rxw" id="Ttg-Gf-64q"/>
+                                    <segue destination="qUw-Ok-IHc" kind="show" identifier="Show Image" id="TWR-aq-jls"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -144,7 +150,57 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
             </objects>
-            <point key="canvasLocation" x="3077" y="241"/>
+            <point key="canvasLocation" x="1401" y="1041"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="jzb-2f-25i">
+            <objects>
+                <viewController id="qUw-Ok-IHc" customClass="ImageViewController" customModule="Smashtag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9sP-MD-Ob8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wvp-kD-JV1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7It-uY-eIz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bju-TG-vhh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ocP-79-Vtm">
+                                        <rect key="frame" x="-1" y="0.0" width="601" height="600"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ocP-79-Vtm" firstAttribute="centerY" secondItem="bju-TG-vhh" secondAttribute="centerY" id="3Gm-vJ-pTk"/>
+                                    <constraint firstItem="ocP-79-Vtm" firstAttribute="top" secondItem="bju-TG-vhh" secondAttribute="top" id="3W9-vR-uWp"/>
+                                    <constraint firstItem="ocP-79-Vtm" firstAttribute="leading" secondItem="bju-TG-vhh" secondAttribute="leading" constant="-1" id="4hx-8w-Mnt"/>
+                                    <constraint firstAttribute="bottom" secondItem="ocP-79-Vtm" secondAttribute="bottom" id="Iej-g9-P0Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="ocP-79-Vtm" secondAttribute="trailing" id="OjH-6X-TKc"/>
+                                    <constraint firstItem="ocP-79-Vtm" firstAttribute="centerX" secondItem="bju-TG-vhh" secondAttribute="centerX" id="xwc-3X-LR1"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bju-TG-vhh" firstAttribute="top" secondItem="7It-uY-eIz" secondAttribute="top" id="Vp1-ew-H03"/>
+                            <constraint firstItem="bju-TG-vhh" firstAttribute="leading" secondItem="7It-uY-eIz" secondAttribute="leading" id="YaR-qz-fUR"/>
+                            <constraint firstAttribute="trailing" secondItem="bju-TG-vhh" secondAttribute="trailing" id="sgx-2t-Pzp"/>
+                            <constraint firstItem="bju-TG-vhh" firstAttribute="bottom" secondItem="Wvp-kD-JV1" secondAttribute="top" id="yFj-ch-EIF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="bju-TG-vhh" id="XUB-hQ-nWU"/>
+                        <outlet property="spinner" destination="BKc-dV-yNt" id="RXS-cN-buq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UeO-ng-Caj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="BKc-dV-yNt">
+                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
+            </objects>
+            <point key="canvasLocation" x="2305" y="1104"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="k8g-Xj-s38">

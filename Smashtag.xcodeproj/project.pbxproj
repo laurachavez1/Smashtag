@@ -20,8 +20,9 @@
 		634210701E03498F00B99727 /* TweetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6342106F1E03498F00B99727 /* TweetTableViewController.swift */; };
 		6358B54A1E0B46750051F47A /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6358B5491E0B46750051F47A /* TweetTableViewCell.swift */; };
 		6358B54E1E0B66160051F47A /* MentionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6358B54D1E0B66160051F47A /* MentionsTableViewController.swift */; };
-		6358B5501E0B6BCE0051F47A /* MentionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6358B54F1E0B6BCE0051F47A /* MentionsTableViewCell.swift */; };
+		6358B5501E0B6BCE0051F47A /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6358B54F1E0B6BCE0051F47A /* ImageTableViewCell.swift */; };
 		6358B5531E0B70F70051F47A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6358B5511E0B70F70051F47A /* Main.storyboard */; };
+		6358B5551E0BA5E20051F47A /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6358B5541E0BA5E20051F47A /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +62,9 @@
 		6342106F1E03498F00B99727 /* TweetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewController.swift; sourceTree = "<group>"; };
 		6358B5491E0B46750051F47A /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		6358B54D1E0B66160051F47A /* MentionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsTableViewController.swift; sourceTree = "<group>"; };
-		6358B54F1E0B6BCE0051F47A /* MentionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsTableViewCell.swift; sourceTree = "<group>"; };
+		6358B54F1E0B6BCE0051F47A /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		6358B5521E0B70F70051F47A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Smashtag/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6358B5541E0BA5E20051F47A /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +133,8 @@
 				6342106F1E03498F00B99727 /* TweetTableViewController.swift */,
 				6358B5491E0B46750051F47A /* TweetTableViewCell.swift */,
 				6358B54D1E0B66160051F47A /* MentionsTableViewController.swift */,
-				6358B54F1E0B6BCE0051F47A /* MentionsTableViewCell.swift */,
+				6358B54F1E0B6BCE0051F47A /* ImageTableViewCell.swift */,
+				6358B5541E0BA5E20051F47A /* ImageViewController.swift */,
 			);
 			path = Smashtag;
 			sourceTree = "<group>";
@@ -297,7 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				634210701E03498F00B99727 /* TweetTableViewController.swift in Sources */,
-				6358B5501E0B6BCE0051F47A /* MentionsTableViewCell.swift in Sources */,
+				6358B5501E0B6BCE0051F47A /* ImageTableViewCell.swift in Sources */,
 				6342103B1E0348F100B99727 /* ViewController.swift in Sources */,
 				6342106D1E03497700B99727 /* TwitterRequest.swift in Sources */,
 				6342106E1E03497700B99727 /* User.swift in Sources */,
@@ -305,6 +308,7 @@
 				6358B54E1E0B66160051F47A /* MentionsTableViewController.swift in Sources */,
 				6342106B1E03497700B99727 /* MediaItem.swift in Sources */,
 				6342106C1E03497700B99727 /* Tweet.swift in Sources */,
+				6358B5551E0BA5E20051F47A /* ImageViewController.swift in Sources */,
 				6358B54A1E0B46750051F47A /* TweetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

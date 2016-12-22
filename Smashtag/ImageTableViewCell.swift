@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MentionsTableViewCell: UITableViewCell {
+class ImageTableViewCell: UITableViewCell {
     
     @IBOutlet weak var tweetImage: UIImageView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
